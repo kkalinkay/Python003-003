@@ -40,4 +40,5 @@ class ProxyspiderPipeline:
         return item
 
     def close_spider(self,spider):
+        self.cs.close()
         self.conn.close()

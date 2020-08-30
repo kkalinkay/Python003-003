@@ -27,14 +27,18 @@ except Exception as e:
 finally:
     browser.close()
 
-#
+
+
+# requests
 #
 # #使用随机浏览器
 # ua=UserAgent(verify_ssl=False)
 #
 # header={
 #     'user-agent':ua.random,
-#     'referer':'https://shimo.im/login?from=home'
+#     'referer':'https://shimo.im/login?from=home',
+#     'x-requested-with':'XmlHttpRequest',
+#     'x-source':'lizard-desktop'
 # }
 #
 # form_data={
@@ -48,15 +52,14 @@ finally:
 # s=requests.Session()
 #
 # #登录
-# #返回403的错误，尚不知道原因
 # resp1=s.post(url=login_url,data=form_data,headers=header)
 # print(resp1.cookies)
 # print(resp1.status_code)
-
-#获取登录后的用户帮助页面
+#
+# #获取登录后的用户帮助页面
 # url2='https://shimo.im/help'
 # response=s.get(url=url2,headers=header)
 # print(response.text)
 # print(response.status_code)
-
-
+#
+#
